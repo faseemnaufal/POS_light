@@ -11,21 +11,29 @@ const Login = () => {
     const navigate = useNavigate()
 
     const handleSubmit = async (value)=>{
-        try {
-            dispatch({
-                type:'SHOW_LOADING'
-            })
-            const res = await axios.post('/api/users/login', value)
-            dispatch({type: "HIDE_LOADING"})
-            message.success('User Login Successfully')
-            localStorage.setItem('auth',JSON.stringify(res.data))
-            navigate('/')
-            
-          } catch (error) {
-            message.error('Something went wrong')
-            console.log(error)
-          }
+      try {
+        dispatch({
+          type: 'SHOW_LOADING',
+        });
+    
+        const res = await axios.post('/api/users/login', value);
+    
+        dispatch({ type: 'HIDE_LOADING' });
+    
+        if (res.data && res.data.user !== null) {
+          // If login is successful
+          message.success('User Login Successfully');
+          localStorage.setItem('auth', JSON.stringify(res.data));
+          navigate('/');
+        } else {
+          // If login fails
+          message.error('Login failed. Please check your credentials.');
         }
+      } catch (error) {
+        message.error('Something went wrong');
+        console.log(error);
+      }
+    }
 
         //currently login user
         useEffect(()=>{

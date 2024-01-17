@@ -68,23 +68,23 @@ const CartPage = () => {
     //taxxxxx
     //handleSubmit
     const handleSubmit = async (value) =>{
-        try{
+        try {
             const newObject = {
-                ...value,
-                cartItems,
-                subTotal,
-                tax:Number(((subTotal / 100) * 10).toFixed(2)),
-                totalAmount: Number(Number(subTotal) +Number(((subTotal / 100) * 10).toFixed(2))),
-                userId: JSON.parse(localStorage.getItem("auth"))._id,
-            }
+              ...value,
+              cartItems,
+              subTotal,
+              totalAmount: subTotal,  // Exclude tax from totalAmount calculation
+              userId: JSON.parse(localStorage.getItem("auth"))._id,
+            };
+        
             //console.log(newObject)
-            await axios.post('/api/bills/add-bills', newObject)
-            message.success("Bill Generated")
-            navigate('/bills')
-        }catch (error){
-            message.error('Something went wrong')
-            console.log(error)
-        }
+            await axios.post('/api/bills/add-bills', newObject);
+            message.success("Bill Generated");
+            navigate('/bills');
+          } catch (error) {
+            message.error('Something went wrong');
+            console.log(error);
+          }
         
     }
 
@@ -126,14 +126,15 @@ const CartPage = () => {
                 <h5>
                     Sub Total : <b>{subTotal}</b>
                 </h5>
-                <h4>
+                {/* <h4>
                     TAX
                     <b>{((subTotal / 100) * 10).toFixed(2)}</b>
-                </h4>
+                </h4> */}
                 <h3>
                     GRAND TOTAL -{" "} 
                     <b>
-                        {Number(subTotal) +Number(((subTotal / 100) * 10).toFixed(2))}
+                        {/* {Number(subTotal) +Number(((subTotal / 100) * 10).toFixed(2))} */}
+                        {Number(subTotal)}
                     </b>
                 </h3>
               </div>

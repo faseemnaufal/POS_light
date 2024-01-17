@@ -144,7 +144,7 @@ const BillsPage = () => {
                                     </>
                                 ))}
 
-                                <tr className='tabletitle'>
+                                {/* <tr className='tabletitle'>
                                     <td />
                                     <td />
                                     <td className='Rate'>
@@ -153,7 +153,7 @@ const BillsPage = () => {
                                     <td className='payment'>
                                         <h2>${selectedBill.tax}</h2>
                                     </td>
-                                </tr>
+                                </tr> */}
                                 <tr className='tabletitle'>
                                     <td />
                                     <td />

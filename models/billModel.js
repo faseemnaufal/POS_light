@@ -18,10 +18,10 @@ const billSchema = mongoose.Schema(
       type: Number,
       required: true,
     },
-    tax: {
-        type: Number,
-        required: true,
-    },
+    // tax: {
+    //     type: Number,
+    //     required: true,
+    // },
     paymentMode: {
       type: String,
       required: true,
