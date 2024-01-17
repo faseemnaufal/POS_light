@@ -4,6 +4,7 @@
     margin: 2 auto;
     width: 76mm;
     background: #fff;
+    
 }
 
 ::selection {
@@ -73,10 +74,18 @@ p {
 table{
     width: 100%;
     border-collapse: collapse;
+    border: 1px solid #ddd;
+   
 }
 .tabletitle {
     font-size: 0.5em;
     background: #eee;
+    border-bottom: 1px solid #ddd;
+}
+.tableitem {
+    width: 24mm;
+    padding: 5px;
+   
 }
 .service {
     border-bottom: 1px solid #eee;

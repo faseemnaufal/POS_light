@@ -5,6 +5,7 @@ import {EyeOutlined} from '@ant-design/icons'
 import axios from 'axios'
 import {  Button, Modal, Table} from 'antd'
 import { useReactToPrint } from 'react-to-print'
+import "../styles/InvoiceStyles.css";
 
 const BillsPage = () => {
 
@@ -46,7 +47,7 @@ const BillsPage = () => {
       {title:'Customer Name', dataIndex:'customerName'},
       {title:'Contact Number', dataIndex:'customerContact'},
       {title:'Sub Total', dataIndex:'subTotal'},
-      {title:'Tax', dataIndex:'tax'},
+    //   {title:'Tax', dataIndex:'tax'},
       {title:'Total Amount', dataIndex:'totalAmount'},
       {
         title:'Actions', dataIndex:'_id', 
@@ -98,8 +99,8 @@ const BillsPage = () => {
                             <br />
                             Phone No : <b>{selectedBill.customerContact}</b>
                             <br />
-                            {/* Date : <b>{selectedBill.date.toString().subString(0, 10)}</b>
-                            <br /> */}
+                            Date : <b>{selectedBill.date.toString().substring(0, 10)}</b>
+                            <br />
                         </p>
                         <hr style={{margin: "5px"}} />
                     </div>
@@ -158,11 +159,11 @@ const BillsPage = () => {
                                     <td />
                                     <td />
                                     <td className='Rate'>
-                                        <h2>Grand Total</h2>
+                                        <h2>Grand Total </h2>
                                     </td>
                                     <td className='payment'>
                                         <h2>
-                                            <b>${selectedBill.totalAmount}</b>
+                                            <b> Rs: {selectedBill.totalAmount}</b>
                                         </h2>
                                     </td>
                                 </tr>

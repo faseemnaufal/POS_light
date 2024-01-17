@@ -27,7 +27,7 @@ const ItemList = ({item}) => {
           title={
             <div>
               <div style={{ textAlign: 'center' }}>{item.name}</div>
-              <div style={{ textAlign: 'center' }}>${item.price}</div>
+              <div style={{ textAlign: 'center' }}>Rs: {item.price}</div>
             </div>
           }
         />

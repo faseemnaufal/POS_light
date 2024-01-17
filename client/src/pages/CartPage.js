@@ -95,7 +95,7 @@ const CartPage = () => {
         <div className='d-flex flex-column align-items-end'>
             <hr />
             <h3>
-                SUB TOTAL : $ <b> {subTotal}</b> /-{" "}
+                SUB TOTAL : LKR <b> {subTotal}</b> /-{" "}
             </h3>
             <Button type='primary' onClick={() => setBillPopup(true)}>
                 Create Invoice
