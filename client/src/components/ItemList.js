@@ -18,11 +18,19 @@ const ItemList = ({item}) => {
       <Card
         //hoverable
         style={{
-          width: 240, marginBottom: 20
+          width: 220, marginBottom: 20
         }}
         cover={<img alt={item.name} src={item.image} style={{height: 200}}/>}
       >
-        <Meta title={item.name} />
+        {/* <Meta title={`${item.name} - $${item.price}`} /> */}
+        <Meta
+          title={
+            <div>
+              <div style={{ textAlign: 'center' }}>{item.name}</div>
+              <div style={{ textAlign: 'center' }}>${item.price}</div>
+            </div>
+          }
+        />
         <div className='item-button'>
           <Button onClick={() => handleAddToCart()}>Add to cart</Button>
         </div>

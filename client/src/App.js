@@ -4,6 +4,8 @@ import ItemPage from './pages/ItemPage';
 import CartPage from './pages/CartPage';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import BillsPage from './pages/BillsPage';
+import CustomerPage from './pages/CustomerPage';
 
 function App() {
   return (
@@ -23,6 +25,16 @@ function App() {
       <Route path='/cart' element={
         <ProtectedRoute>
           <CartPage/>
+        </ProtectedRoute>
+      } />
+      <Route path='/bills' element={
+        <ProtectedRoute>
+          <BillsPage/>
+        </ProtectedRoute>
+      } />
+      <Route path='/customers' element={
+        <ProtectedRoute>
+          <CustomerPage/>
         </ProtectedRoute>
       } />
       <Route path='/login' element={<Login/>} />
